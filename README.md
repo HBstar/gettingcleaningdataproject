@@ -1,6 +1,14 @@
 ## gettingcleaningdataproject
-## please refer to below for detailed explanation of the script
+## In general to explain what the script will do:
+# 1. Load data sets from txt files; 
+# 2. Merges the training and the test sets to create one data set;
+# 3. Extracts only the measurements on the mean and standard deviation for each measurement;
+# 4. Uses descriptive activity (by default) names to name the activities in the data set;
+# 5. Appropriately labels the data set with descriptive variable names;
+# 6. From the data set in step 5, creates a second, independent tidy data set with the average of each variable for each activity and each # subject.
 
+
+## please refer to below for detailed explanation of the script
 1) download the zip file from the provided web link;
 2) unzip the zip file to my working directory;
 3) check readme and explanation documents to understand the data;
