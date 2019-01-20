@@ -24,5 +24,5 @@
 21) rename slected columns by using "featureneed" list;
 22) labels the data set with descriptive variable names;
 23) uses descriptive activity names to name the activities in the data set;
-24) creates a new data set, the data set is with the average of each variable for each activity and each subject
-25) write the final table into a txt file
+24) creates a new data set, the data set is with the average of each variable for each activity and each subject;
+25) write the final table into a txt file.
