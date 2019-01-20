@@ -19,7 +19,10 @@ units:
 my personal guess for unites are:
 1) prefix 't' means time so in time units;
 2) prefix 'f' means frequency so in Hz unit;
-3) angle() means in angle unit so in rad unit.
+3) angle() means in angle unit so in rad unit;
+4) subject is integer;
+5) activity is factor;
+6) all others are numberic.
 
 Other 86 variables:
 "tBodyAcc-mean()-X_average"
