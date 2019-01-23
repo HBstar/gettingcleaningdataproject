@@ -9,10 +9,10 @@
 
 
 ## please refer to below for detailed explanation of the script
-1) download the zip file from the provided web link;
-2) unzip the zip file to my working directory;
-3) check readme and explanation documents to understand the data;
-4) library "dplyr" package, record the package version and R version;
+1) library "dplyr" package;
+2) record the dplyr package version and R version;
+3) download the zip file from the provided web link;
+4) unzip the zip file to my data directory; 
 5) load activity lables from the file, the file is only for reading, not used next;
 6) load the test data set and its activities and subjects into individual dataframes;
 7) rename variable names to "activity" and "subject";
