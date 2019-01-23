@@ -6,13 +6,20 @@ package_version(R.version)
 packageVersion("dplyr")
 ##[1] '0.7.8'
 
+##download the file and unzip it
+fileurl<-"https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip"
+if(!file.exists("data")){dir.create("data")}
+download.file(fileurl, destfile="./data/dataset.zip")
+zipfile<-"./data/dataset.zip"
+unzip(zipfile, exdir="./data")
+
 ##load activity lables from the file, the file is only for reading, not used next
-activitylabel<-read.table("./UCI HAR Dataset/activity_labels.txt")
+activitylabel<-read.table("./data/UCI HAR Dataset/activity_labels.txt")
 
 ##load the test data set and its activities and subjects into individual dataframes
-testdata<-read.table("./UCI HAR Dataset/test/X_test.txt")
-testactivity<-read.table("./UCI HAR Dataset/test/y_test.txt")
-testsubject<-read.table("./UCI HAR Dataset/test/subject_test.txt")
+testdata<-read.table("./data/UCI HAR Dataset/test/X_test.txt")
+testactivity<-read.table("./data/UCI HAR Dataset/test/y_test.txt")
+testsubject<-read.table("./data/UCI HAR Dataset/test/subject_test.txt")
 
 ##rename variable names to "activity" and "subject"
 testactivity<-rename(testactivity, activity=V1)
@@ -24,9 +31,9 @@ totaltest<-mutate(subject=testsubject$subject, activity=testactivity$activity, t
 totaltest<-select(totaltest, "subject","activity", everything())
 
 ##load the train data set and its activities and subjects into individual dataframes
-traindata<-read.table("./UCI HAR Dataset/train/X_train.txt")
-trainactivity<-read.table("./UCI HAR Dataset/train/y_train.txt")
-trainsubject<-read.table("./UCI HAR Dataset/train/subject_train.txt")
+traindata<-read.table("./data/UCI HAR Dataset/train/X_train.txt")
+trainactivity<-read.table("./data/UCI HAR Dataset/train/y_train.txt")
+trainsubject<-read.table("./data/UCI HAR Dataset/train/subject_train.txt")
 
 ##rename variable names to "activity" and "subject"
 trainactivity<-rename(trainactivity, activity=V1)
@@ -45,7 +52,7 @@ total1<-merge(totaltest, totaltrain, all=TRUE)
 ##sort "n" in the increasing order
 ##get the character list for required features
 ##set "m" to be equal to "n+2" for subsetting required columns from total1
-feature<-read.table("./UCI HAR Dataset/features.txt")
+feature<-read.table("./data/UCI HAR Dataset/features.txt")
 n<-c(grep("[Mm]ean",as.character(feature[,2])),grep("std", as.character(feature[,2])))
 n<-sort(n)
 featureneed<-as.character(feature[,2][n])
